@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Login</title>
+    <meta name="description" content="Hbnb is an online marketplace that connects people who want to rent">
+    <link rel="icon" type="image/x-icon" href="/static/image/favicon.ico">
+    <link rel="icon" type="image/png" href="/static/image/icon.png">
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav_header">
+          <a href="/" class="home-button">
+            <img src="/static/image/logo.png" alt="Logo" class="logo">
+          </a>
+          <div class="nav-links">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/place.html" class="nav-link">Places</a>
+            <a href="/add_review.html" class="nav-link">Review</a>
+          </div>
+          <a href="/login.html" class="login-button" id="login-link">Login</a>
+          <a href="#" class="logout-button" id="logout-link" style="display: none;">Logout</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="Available Places">
+        <header>
+          <h2>
+            Available Places
+          </h2>
+        </header>
+      </div id="filter">
+        <label for="country-filter">Filter by Country:</label>
+        <select id="country-filter" name="country"></select>
+    </div>
+      <section id="places-list">
+        <div class="place-card">
+          <img src="static/image/images.jpeg" alt="Place Image" class="place-image">
+          <h2>Casa Playa</h2>
+          <p>Price per night: $100</p>
+          <p>Location: City, Country</p>
+          <button class="details-button">View Details</button>
+        </div>
+        <div class="place-card">
+          <img
+            src="static/image/images.jpeg"
+            alt="Place Image"
+            class="place-image">
+          <h2>Apartment</h2>
+          <p>Price per night: $120</p>
+          <p>Location: City, Country</p>
+          <button class="details-button">View Details</button>
+        </div>
+        <div class="place-card">
+          <img src="static/image/images.jpeg" alt="Place Image" class="place-image">
+          <h2>Room</h2>
+          <p>Price per night: $80</p>
+          <p>Location: City, Country</p>
+          <button class="details-button">View Details</button>
+        </div>
+        <!-- Add more if needed -->
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 All rights reserved.</p>
+    </footer>
+    <script src="/static/scripts.js"></script>
+  </body>
+</html>
