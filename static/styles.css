@@ -90,6 +90,49 @@ html {
   margin-top: 0;
 }
 
+/* Place index */
+
+.available-places {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#places-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+  gap: 20px; /* Espacio entre las tarjetas */
+  padding: 20px;
+}
+
+.place-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.place-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.details-button {
+  padding: 10px 20px;
+  background-color: var(--background-color);
+  color: var(--color-white);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.details-button:hover {
+  background-color: var(--color-primary); /* Un color más oscuro para el hover */
+}
+
 /* Login/Logout */
 
 .login-form {
@@ -129,14 +172,14 @@ html {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 1.25em;
+  font-size: 1.30em;
 }
 
 .login-form button:hover {
   background-color: var(--color-primary);
 }
 
-.login-button, .home-button, .logout-button {
+.login-button, .logout-button {
   text-decoration: none;
   color: #333;
   font-weight: bold;
@@ -281,11 +324,6 @@ footer p {
   --button-hover-text-decoration: none;
   --button-hover-background: var(--color-primary);
   --header-padding: 4rem 0 0;
-  --header-logo-position: relative;
-  --header-logo-link-display: inline-block;
-  --header-logo-link-position: absolute;
-  --header-logo-link-top: -1rem;
-  --header-logo-link-left: 0;
   --transition-duration: .3s;
   --transition-cubic-bezier: cubic-bezier(0.17, 0.67, 0, 1.01);
 }
@@ -320,9 +358,9 @@ a:hover {
   text-decoration: underline;
 }
 
-a:active {
+/* a:active {
   background-color: var(--color-light-grey);
-}
+} */
 
 .visually-hidden {
   display: none;
@@ -330,17 +368,6 @@ a:active {
 
 .header {
   padding: var(--header-padding);
-}
-
-.header-logo {
-  position: var(--header-logo-position);
-}
-
-.header-logo a {
-  display: var(--header-logo-link-display);
-  position: var(--header-logo-link-position);
-  top: var(--header-logo-link-top);
-  left: var(--header-logo-link-left);
 }
 
 /* Section */
