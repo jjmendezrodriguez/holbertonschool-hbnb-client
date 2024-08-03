@@ -15,6 +15,7 @@
         "latitude": 40.7128,
         "longitude": -74.0060,
         "amenities": ["WiFi", "Pool", "Air Conditioning"],
+        "images": ["static/image/new_york.jpeg"],
         "reviews": [
             {
                 "user_name": "Jane Smith",
@@ -44,6 +45,7 @@
         "latitude": 42.3601,
         "longitude": -71.0589,
         "amenities": ["WiFi", "Fireplace"],
+        "images": ["static/image/boston.jpeg"],
         "reviews": []
     },
     {
@@ -62,6 +64,7 @@
         "latitude": 34.0522,
         "longitude": -118.2437,
         "amenities": ["WiFi", "Pool", "Beach Access"],
+        "images": ["static/image/images.jpeg"],
         "reviews": []
     },
     {
@@ -80,6 +83,7 @@
         "latitude": 43.6532,
         "longitude": -79.3832,
         "amenities": ["WiFi", "Gym"],
+        "images": ["static/image/toronto.jpeg"],
         "reviews": []
     },
     {
@@ -98,6 +102,7 @@
         "latitude": 49.2827,
         "longitude": -123.1207,
         "amenities": ["WiFi", "Fireplace"],
+        "images": ["static/image/vancouver.jpeg"],
         "reviews": [
             {
                 "user_name": "Alice Johnson",
@@ -122,6 +127,7 @@
         "latitude": 40.7128,
         "longitude": -74.0060,
         "amenities": ["WiFi", "Gym"],
+        "images": ["static/image/new_york.jpeg"],
         "reviews": [
             {
                 "user_name": "John Doe",
@@ -146,6 +152,7 @@
         "latitude": 42.3601,
         "longitude": -71.0589,
         "amenities": ["WiFi", "Breakfast"],
+        "images": ["static/image/boston.jpeg"],
         "reviews": []
     },
     {
@@ -164,6 +171,7 @@
         "latitude": 34.0522,
         "longitude": -118.2437,
         "amenities": ["WiFi", "Pool", "Gym"],
+        "images": ["static/image/los_angeles.jpeg"],
         "reviews": []
     },
     {
@@ -182,6 +190,7 @@
         "latitude": 43.6532,
         "longitude": -79.3832,
         "amenities": ["WiFi", "Fireplace"],
+        "images": ["static/image/toronto.jpeg"],
         "reviews": [
             {
                 "user_name": "Jane Smith",
@@ -206,6 +215,7 @@
         "latitude": 49.2827,
         "longitude": -123.1207,
         "amenities": ["WiFi", "Fireplace", "Pool"],
+        "images": ["static/image/vancouver.jpeg"],
         "reviews": []
     },
     {
@@ -224,6 +234,7 @@
         "latitude": 40.7128,
         "longitude": -74.0060,
         "amenities": ["WiFi", "Gym", "Pool"],
+        "images": ["static/image/new_york.jpeg"],
         "reviews": [
             {
                 "user_name": "Alice Johnson",
@@ -248,6 +259,7 @@
         "latitude": 42.3601,
         "longitude": -71.0589,
         "amenities": ["WiFi"],
+        "images": ["static/image/boston.jpeg"],
         "reviews": []
     },
     {
@@ -266,6 +278,7 @@
         "latitude": 34.0522,
         "longitude": -118.2437,
         "amenities": ["WiFi", "Pool", "Gym"],
+        "images": ["static/image/los_angeles.jpeg"],
         "reviews": [
             {
                 "user_name": "Jane Smith",
@@ -295,6 +308,7 @@
         "latitude": 43.6532,
         "longitude": -79.3832,
         "amenities": ["WiFi", "Fireplace"],
+        "images": ["static/image/toronto.jpeg"],
         "reviews": []
     },
     {
@@ -313,6 +327,7 @@
         "latitude": 49.2827,
         "longitude": -123.1207,
         "amenities": ["WiFi", "Fireplace"],
+        "images": ["static/image/vancouver.jpeg"],
         "reviews": [
             {
                 "user_name": "John Doe",
@@ -337,6 +352,7 @@
         "latitude": 40.7128,
         "longitude": -74.0060,
         "amenities": ["WiFi", "Pool", "Gym", "Sauna"],
+        "images": ["static/image/new_york.jpeg"],
         "reviews": []
     },
     {
@@ -355,6 +371,7 @@
         "latitude": 42.3601,
         "longitude": -71.0589,
         "amenities": ["WiFi"],
+        "images": ["static/image/boston.jpeg"],
         "reviews": []
     },
     {
@@ -373,6 +390,7 @@
         "latitude": 34.0522,
         "longitude": -118.2437,
         "amenities": ["WiFi", "Pool", "Gym"],
+        "images": ["static/image/los_angeles.jpeg"],
         "reviews": [
             {
                 "user_name": "John Doe",
@@ -397,6 +415,7 @@
         "latitude": 43.6532,
         "longitude": -79.3832,
         "amenities": ["WiFi", "Fireplace"],
+        "images": ["static/image/toronto.jpeg"],
         "reviews": []
     },
     {
@@ -415,6 +434,7 @@
         "latitude": 49.2827,
         "longitude": -123.1207,
         "amenities": ["WiFi", "Fireplace"],
+        "images": ["static/image/vancouver.jpeg"],
         "reviews": []
     },
     {
@@ -433,6 +453,7 @@
         "latitude": 40.7128,
         "longitude": -74.0060,
         "amenities": ["WiFi", "Gym", "Pool"],
+        "images": ["static/image/new_york.jpeg"],
         "reviews": [
             {
                 "user_name": "John Doe",
@@ -462,6 +483,7 @@
         "latitude": 42.3601,
         "longitude": -71.0589,
         "amenities": ["WiFi", "Pool"],
+        "images": ["static/image/boston.jpeg"],
         "reviews": []
     },
     {
@@ -480,6 +502,7 @@
         "latitude": 34.0522,
         "longitude": -118.2437,
         "amenities": ["WiFi", "Pool"],
+        "images": ["static/image/los_angeles.jpeg"],
         "reviews": []
     },
     {
@@ -498,6 +521,7 @@
         "latitude": 43.6532,
         "longitude": -79.3832,
         "amenities": ["WiFi"],
+        "images": ["static/image/toronto.jpeg"],
         "reviews": []
     },
     {
@@ -516,6 +540,7 @@
         "latitude": 49.2827,
         "longitude": -123.1207,
         "amenities": ["WiFi", "Pool", "Gym"],
+        "images": ["static/image/vancouver.jpeg"],
         "reviews": [
             {
                 "user_name": "Jane Smith",

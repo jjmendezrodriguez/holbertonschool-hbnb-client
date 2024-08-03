@@ -35,6 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Check if on index page
+    if (window.location.pathname.includes('index.html') || window.location.pathname === '/') {
+        fetchPlaces();
+    }
+
     // Check if on place details page
     if (window.location.pathname.includes('place.html')) {
         const placeId = getPlaceIdFromURL();
@@ -178,7 +183,7 @@ function displayPlaces(places) {
         placeCard.className = 'place-card';
 
         placeCard.innerHTML = `
-            <img src="static/image/images.jpeg" class="place-image" alt="Place Image">
+            <img src="${place.images[0]}" class="place-image" alt="Place Image">
             <h3>${place.description}</h3>
             <p>Price per night: $${place.price_per_night}</p>
             <p>Location: ${place.city_name}, ${place.country_name}</p>
@@ -195,6 +200,8 @@ function displayPlaces(places) {
 
 function populateCountryFilter(places) {
     const countryFilter = document.getElementById('country-filter');
+    countryFilter.innerHTML = '';
+    
     const countries = [...new Set(places.map(place => place.country_name))];
 
     countries.forEach(country => {
@@ -209,7 +216,7 @@ function filterPlaces(selectedCountry) {
     const placeCards = document.querySelectorAll('.place-card');
 
     placeCards.forEach(card => {
-        const location = card.querySelector('p').innerText.split(': ')[1];
+        const location = card.querySelector('p:nth-of-type(2)').innerText.split(': ')[1];
         if (location.includes(selectedCountry) || selectedCountry === 'All') {
             card.style.display = 'block';
         } else {

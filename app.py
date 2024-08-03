@@ -63,7 +63,8 @@ def get_places():
             "city_id": place['city_id'],
             "city_name": place['city_name'],
             "country_code": place['country_code'],
-            "country_name": place['country_name']
+            "country_name": place['country_name'],
+            "images": place['images']
         }
         for place in places
     ]
@@ -92,6 +93,7 @@ def get_place(place_id):
         "country_code": place['country_code'],
         "country_name": place['country_name'],
         "amenities": place['amenities'],
+        "images": place['images'],
         "reviews": place['reviews'] + [r for r in new_reviews if r['place_id'] == place_id]
     }
     return jsonify(response)

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Index</title>
+    <title>index</title>
     <meta name="description" content="Hbnb is an online marketplace that connects people who want to rent">
     <link rel="icon" type="image/x-icon" href="/static/image/favicon.ico">
     <link rel="icon" type="image/png" href="/static/image/icon.png">
@@ -18,7 +18,7 @@
           </a>
           <div class="nav-links">
             <a href="/" class="nav-link">Home</a>
-            <a href="/place.html" class="nav-link">Place</a>
+            <a href="/place.html" class="nav-link">Places</a>
             <a href="/add_review.html" class="nav-link">Review</a>
           </div>
           <a href="/login.html" class="login-button" id="login-link">Login</a>
@@ -37,7 +37,28 @@
         <select id="country-filter" name="country" class="filter-select"></select>
       </div>
       <section id="places-list">
-        <!-- The place cards will be populated here by JavaScript -->
+        <div class="place-card">
+          <img src="static/image/images.jpeg" alt="Place Image" class="place-image">
+          <h2>Casa Playa</h2>
+          <p>Price per night: $100</p>
+          <p>Location: City, Country</p>
+          <button class="details-button">View Details</button>
+        </div>
+        <div class="place-card">
+          <img src="static/image/images.jpeg" alt="Place Image" class="place-image">
+          <h2>Apartment</h2>
+          <p>Price per night: $120</p>
+          <p>Location: City, Country</p>
+          <button class="details-button">View Details</button>
+        </div>
+        <div class="place-card">
+          <img src="static/image/images.jpeg" alt="Place Image" class="place-image">
+          <h2>Room</h2>
+          <p>Price per night: $80</p>
+          <p>Location: City, Country</p>
+          <button class="details-button">View Details</button>
+        </div>
+        <!-- Add more if needed -->
       </section>
     </main>
     <footer>

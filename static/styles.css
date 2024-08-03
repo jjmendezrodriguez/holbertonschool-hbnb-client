@@ -16,7 +16,7 @@
 
 html {
   scroll-behavior: smooth;
-  height: 100%;
+  height: 70%;
   margin: 0;
 }
 
@@ -35,6 +35,7 @@ html {
   align-items: center; /* Centrar verticalmente los elementos */
   padding: 10px 20px;
   background-color: var(--background-color); /* Fondo del nav */
+  font-size: 20px;
 }
 
 /* Estilos para la imagen */
@@ -42,7 +43,12 @@ html {
   width: 150px; /* Ajusta el ancho de la imagen */
   height: auto; /* Mantiene la proporción de la imagen */
   display: block;
-  margin-right: 220px; /* Texto home, places, review */
+  margin-right: 140px; /* Texto home, places, review */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+.logo:hover {
+  transform: scale(1.1); /* Agrandar ligeramente al pasar el mouse */
 }
 
 .nav-links a {
@@ -50,10 +56,12 @@ html {
   text-decoration: none; /* Elimina el subrayado de los enlaces */
   color: var(--color-white); /* Color del texto de los enlaces */
   font-weight: bold; /* Negrita para el texto de los enlaces */
+  transition: color 0.3s ease; /* Animación suave */
 }
 
 .nav-links a:hover {
   text-decoration: underline;
+  color: var(--color-primary);
 }
 
 .login-button, .logout-button {
@@ -61,10 +69,12 @@ html {
   text-decoration: none; /* Elimina el subrayado del enlace */
   color: var(--color-white); /* Color del texto del enlace */
   font-weight: bold; /* Negrita para el texto del enlace */
+  transition: transform 0.3s ease, color 0.3s ease; /* Animación suave */
 }
 
 .login-button:hover, .logout-button:hover {
-  transform: scale(1.5);
+  transform: scale(1.1);
+  color: var(--color-primary);
 }
 
 /* Places */
@@ -79,6 +89,12 @@ html {
   height: auto;
   border-radius: 8px;
   margin-right: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+  transition: transform 0.3s ease; /* Animación suave */
+}
+
+.place-image-large:hover {
+  transform: scale(1.05); /* Agrandar ligeramente al pasar el mouse */
 }
 
 .place-info {
@@ -95,13 +111,14 @@ html {
 .available-places {
   text-align: center;
   margin: 20px 0;
+  font-size: 20px;
 }
 
 #places-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Tres columnas */
   gap: 20px; /* Espacio entre las tarjetas */
-  padding: 20px;
+  padding: 30px;
 }
 
 .place-card {
@@ -111,6 +128,11 @@ html {
   text-align: center;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease; /* Animación suave */
+}
+
+.place-card:hover {
+  transform: translateY(-5px); /* Mover ligeramente hacia arriba al pasar el mouse */
 }
 
 .place-card img {
@@ -118,6 +140,12 @@ html {
   height: auto;
   border-radius: 8px;
   margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+  transition: transform 0.3s ease; /* Animación suave */
+}
+
+.place-card img:hover {
+  transform: scale(1.05); /* Agrandar ligeramente al pasar el mouse */
 }
 
 .details-button {
@@ -127,10 +155,42 @@ html {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.3s ease; /* Animación suave */
 }
 
 .details-button:hover {
   background-color: var(--color-primary); /* Un color más oscuro para el hover */
+}
+
+/* filter/index */
+
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.filter-label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.filter-select {
+  padding: 6px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  font-size: 1rem;
+  color: var(--text-color);
+  transition: border-color 0.3s ease; /* Animación suave */
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: var(--color-primary);
 }
 
 /* Login/Logout */
@@ -172,17 +232,12 @@ html {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 1.30em;
+  font-size: 1.3em;
+  transition: background-color 0.3s ease; /* Animación suave */
 }
 
 .login-form button:hover {
   background-color: var(--color-primary);
-}
-
-.login-button, .logout-button {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
 }
 
 .form-links {
@@ -202,16 +257,17 @@ html {
 }
 
 /* Footer */
+main {
+  padding-bottom: 30px; /*para que no se trebe el fotter con el main*/
+}
 
 footer {
   background-color: var(--background-color);
   color: var(--color-white);
-  margin: 0;
-  padding: 0;
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 60px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -280,215 +336,99 @@ footer p {
   border-radius: 8px;
 }
 
-/* Nuevas Variables Root */
-:root {
-  --color-light-grey: #f3f3f3;
-  --color-dark-grey: #353535;
-  --font-family-base: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-family-title: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-size-small: 1.2rem;
-  --font-size-medium: 1.6rem;
-  --font-size-large: 1.8rem;
-  --font-size-x-large: 2.3rem;
-  --font-size-xx-large: 4.8rem;
-  --font-weight-regular: 400;
-  --font-weight-bold: 700;
-  --line-height-small: 1.2;
-  --line-height-base: 1.5;
-  --line-height-big: 1.8;
-  --section-header-align: center;
-  --section-tagline-transform: uppercase;
-  --section-title-margin: 0;
-  --section-title-color: var(--color-black);
-  --section-padding: 5rem 0;
-  --section-header-padding: 0 0 3rem;
-  --section-body-padding: 0 0 3rem;
-  --section-footer-padding: 3rem 0 0;
-  --section-footer-align: center;
-  --footer-padding: 5rem 0 1rem;
-  --nav-item-font-family: var(--font-family-title);
-  --nav-item-font-weight: var(--font-weight-bold);
-  --nav-item-font-size: var(--font-size-medium);
-  --nav-item-letter-spacing: 0.04rem;
-  --nav-item-display: inline-block;
-  --nav-item-margin: 0 0 3rem 0;
-  --nav-item-link-hover: var(--color-white);
-  --section-tagline-margin: 0;
-  --button-display: inline-block;
-  --button-padding: 1.5rem 3rem;
-  --button-border: 0.2rem solid var(--color-primary);
-  --button-color: var(--color-black);
-  --button-text-decoration: none;
-  --button-font-size: var(--font-size-large);
-  --button-hover-color: var(--color-white);
-  --button-hover-text-decoration: none;
-  --button-hover-background: var(--color-primary);
-  --header-padding: 4rem 0 0;
-  --transition-duration: .3s;
-  --transition-cubic-bezier: cubic-bezier(0.17, 0.67, 0, 1.01);
+/* Places */
+
+.place-details {
+  display: flex;
+  flex-wrap: wrap; /* Para hacer que el contenido se ajuste en pantallas pequeñas */
+  padding: 20px;
+  justify-content: center; /* Centrar el contenido horizontalmente */
 }
 
-html {
-  scroll-behavior: smooth;
-  font-size: 62.5%;
+.place-image-large {
+  width: 15%;
+  max-width: 50px; /* Limitar el ancho máximo de la imagen */
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
 }
 
-body {
-  font-family: var(--font-family-base);
-  font-size: var(--font-size-medium);
-  font-weight: var(--font-weight-regular);
-  line-height: var(--line-height-base);
+.place-info {
+  width: 100%;
+  max-width: 600px; /* Limitar el ancho máximo de la información del lugar */
+  text-align: center; /* Centrar el texto */
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-family-title);
-  font-weight: var(--font-weight-bold);
+.place-info h2 {
+  font-size: 2em;
+  margin-top: 0;
 }
 
-a:link, a:visited {
-  color: var(--text-color);
-  text-decoration: none;
+/* Review List */
+.review-list {
+  padding: 20px;
 }
 
-a:visited {
-  font-style: italic;
+.review-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: left; /* Alinear el texto a la izquierda */
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
-/* a:active {
-  background-color: var(--color-light-grey);
-} */
-
-.visually-hidden {
-  display: none;
-}
-
-.header {
-  padding: var(--header-padding);
-}
-
-/* Section */
-
+/* Añadir un margen superior a las secciones */
 .section {
-  padding: var(--section-padding);
+  margin-top: 40px;
 }
 
+/* Añadir estilos a las secciones de encabezado */
 .section-header {
-  text-align: var(--section-header-align);
-  padding: var(--section-header-padding);
-}
-
-.section-body {
-  padding: var(--section-body-padding);
-}
-
-.section-footer {
-  padding: var(--section-footer-padding);
-  text-align: var(--section-footer-align);
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .section-title {
-  font-family: var(--font-family-title);
-  font-size: var(--font-size-xx-large);
-  font-weight: var(--font-weight-bold);
-  margin: var(--section-title-margin);
-  color: var(--section-title-color);
-}
-
-.card-category {
-  color: var(--color-primary);
+  font-size: 2em;
+  color: var(--color-black);
 }
 
 .section-tagline {
+  font-size: 1.2em;
   color: var(--color-primary);
-  font-family: var(--font-family-title);
-  text-transform: var(--section-tagline-transform);
-  font-weight: var(--font-weight-bold);
-  margin: var(--section-tagline-margin);
 }
 
-.section-hero {
-  background-size: 90rem auto;
+/* Añadir estilos a los formularios */
+.add-review {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
 
-.section-hero .section-title {
-  margin-bottom: 5rem;
+.add-review label {
+  margin: 10px 0 5px;
 }
 
-.section-hero .section-inner {
-  padding: 10rem 40rem 2rem 0;
+.add-review textarea, .add-review select, .add-review input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 
-.container {
-  width: 960px;
-  margin-left: auto;
-  margin-right: auto;
+.add-review button {
+  padding: 10px 20px;
+  background-color: var(--background-color);
+  color: var(--color-white);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
 }
 
-/* Nav. */
-
-.navbar-menu {
-  float: right;
-}
-
-.nav {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-align: center;
-}
-
-.nav .nav-item {
-  font-family: var(--nav-item-font-family);
-  font-weight: var(--nav-item-font-weight);
-  font-size: var(--nav-item-font-size);
-  letter-spacing: var(--nav-item-letter-spacing);
-  display: var(--nav-item-display);
-  margin: var(--nav-item-margin);
-}
-
-.nav .nav-link {
-  display: block;
-  padding: 0.5rem 1rem;
-}
-
-.nav .nav-link:hover {
-  color: var(--nav-item-link-hover);
-}
-
-.nav .nav-link::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: var(--color-white);
-  width: 0;
-  height: 0.2rem;
-  transition: var(--transition-duration) var(--transition-cubic-bezier);
-}
-
-ul.row {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-[class^="col-"] {
-  float: left;
-  padding: 0.5rem;
-}
-
-.col-1-3 {
-  width: 33.33%;
-  /*float: left;
-  padding: 0.5rem;*/
-}
-
-.col-1-2 {
-  width: 50%;
-  /*float: left;
-  padding: 0.5rem;*/
+.add-review button:hover {
+  background-color: var(--color-primary);
 }
