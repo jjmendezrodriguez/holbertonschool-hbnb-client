@@ -79,11 +79,6 @@ html {
 
 /* Places */
 
-.place-details {
-  display: flex;
-  padding: 20px;
-}
-
 .place-image-large {
   width: 50%;
   height: auto;
@@ -91,10 +86,6 @@ html {
   margin-right: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
   transition: transform 0.3s ease; /* Animación suave */
-}
-
-.place-image-large:hover {
-  transform: scale(1.05); /* Agrandar ligeramente al pasar el mouse */
 }
 
 .place-info {
@@ -315,13 +306,6 @@ footer p {
   padding: 20px;
 }
 
-.review-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-
 .add-review {
   text-align: center;
   margin-top: 20px;
@@ -353,10 +337,9 @@ footer p {
 }
 
 .place-details {
-  display: flex;
   flex-wrap: wrap; /* Para hacer que el contenido se ajuste en pantallas pequeñas */
   padding: 20px;
-  justify-content: center; /* Centrar el contenido horizontalmente */
+  text-align: center;
 }
 
 .place-image-large {
@@ -386,9 +369,14 @@ footer p {
 .review-card {
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 10px;
-  margin-bottom: 10px;
-  text-align: left; /* Alinear el texto a la izquierda */
+  padding: 25px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 25px;
+}
+
+.review-card p {
+  margin: 5px;
 }
 
 /* Añadir un margen superior a las secciones */
@@ -418,6 +406,7 @@ footer p {
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+  margin: 25px;
 }
 
 .add-review label {
@@ -441,6 +430,7 @@ footer p {
   border-radius: 4px;
   cursor: pointer;
   font-size: 1em;
+  margin: 25px;
 }
 
 .add-review button:hover {
@@ -449,7 +439,7 @@ footer p {
 
 /* Review from */
 
-.review-form, .review-card {
+.review-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -459,10 +449,11 @@ footer p {
   margin: 10px 0;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: left; /* Alinear el texto a la izquierda */
+  text-align: center; /* Alinear el texto a la izquierda */
+  margin: 25px;
 }
 
-.review-form label, .review-card p {
+.review-form label {
   margin: 10px 0 5px;
   width: 100%;
 }

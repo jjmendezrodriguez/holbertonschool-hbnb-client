@@ -276,42 +276,42 @@ function displayPlaceDetails(place) {
     placeDetailsSection.appendChild(nameElement);
 
     const hostElement = document.createElement('p');
-    hostElement.textContent = `Host: ${place.host_name}`;
+    hostElement.innerHTML = `<strong>Host:</strong> ${place.host_name}`;
     placeDetailsSection.appendChild(hostElement);
 
     const priceElement = document.createElement('p');
-    priceElement.textContent = `Price per night: $${place.price_per_night}`;
+    priceElement.innerHTML = `<strong>Price per night:</strong> $${place.price_per_night}`;
     placeDetailsSection.appendChild(priceElement);
 
     const locationElement = document.createElement('p');
-    locationElement.textContent = `Location: ${place.city_name}, ${place.country_name}`;
+    locationElement.innerHTML = `<strong>Location:</strong> ${place.city_name}, ${place.country_name}`;
     placeDetailsSection.appendChild(locationElement);
 
     const descriptionElement = document.createElement('p');
-    descriptionElement.textContent = `Description: ${place.description}`;
+    descriptionElement.innerHTML = `<strong>Description:</strong> ${place.description}`;
     placeDetailsSection.appendChild(descriptionElement);
 
     const amenitiesElement = document.createElement('p');
-    amenitiesElement.textContent = `Amenities: ${place.amenities.join(', ')}`;
+    amenitiesElement.innerHTML = `<strong>Amenities:</strong> ${place.amenities.join(', ')}`;
     placeDetailsSection.appendChild(amenitiesElement);
 }
 
     const reviewsSection = document.getElementById('reviews');
-    reviewsSection.innerHTML = '<h2>Reviews</h2>';
+    reviewsSection.innerHTML = '<h2>Guest Reviews:</h2>';
     place.reviews.forEach(review => {
         const reviewCard = document.createElement('div');
         reviewCard.className = 'review-card';
 
         const reviewComment = document.createElement('p');
-        reviewComment.textContent = `Comment: ${review.comment}`;
+        reviewComment.innerHTML = `<strong>Comment</strong>: ${review.comment}`;
         reviewCard.appendChild(reviewComment);
 
         const reviewUser = document.createElement('p');
-        reviewUser.textContent = `User: ${review.user_name}`;
+        reviewUser.innerHTML = `<strong>User</strong>: ${review.user_name}`;
         reviewCard.appendChild(reviewUser);
 
         const reviewRating = document.createElement('p');
-        reviewRating.textContent = `Rating: ${review.rating}/5`;
+        reviewRating.innerHTML = `<strong>Rating</strong>: ${review.rating}/5`;
         reviewCard.appendChild(reviewRating);
 
         reviewsSection.appendChild(reviewCard);
