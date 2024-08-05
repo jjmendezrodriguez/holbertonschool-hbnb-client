@@ -1,68 +1,83 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>add_review</title>
-    <meta name="description" content="Hbnb is an online marketplace that connects people who want to rent">
-    <link rel="icon" type="image/x-icon" href="/static/image/favicon.ico">
-    <link rel="icon" type="image/png" href="/static/image/icon.png">
-    <link rel="stylesheet" href="/static/styles.css">
-  </head>
-  <body>
-    <header>
-      <nav>
-        <div class="nav_header">
-          <a href="/" class="home-button">
-            <img src="/static/image/logo.png" alt="Logo" class="logo">
-          </a>
-          <div class="nav-links">
-            <a href="/" class="nav-link">Home</a>
-            <a href="/place.html" class="nav-link">Place</a>
-            <a href="/add_review.html" class="nav-link">Review</a>
-          </div>
-          <a href="/login.html" class="login-button" id="login-link">Login</a>
-          <a href="#" class="logout-button" id="logout-link" style="display: none;">Logout</a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Add Review</title>
+  <meta name="description" content="Hbnb is an online marketplace that connects people who want to rent">
+  <link rel="icon" type="image/x-icon" href="/static/image/favicon.ico">
+  <link rel="icon" type="image/png" href="/static/image/icon.png">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav_header">
+        <a href="/" class="home-button">
+          <img src="/static/image/logo.png" alt="Logo" class="logo">
+        </a>
+        <div class="nav-links">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/place.html" class="nav-link">Place</a>
+          <a href="/add_review.html" class="nav-link">Review</a>
         </div>
-      </nav>
-    </header>
-    <main>
-        <form id="review-form">
-            <h2>Add a Review</h2>
-            <label for="place">Place:</label>
-            <input type="text" id="place" name="place" readonly>
-            
-            <label for="review">Review:</label>
-            <textarea id="review" name="review" required></textarea>
-            
-            <button type="submit">Submit</button>
-        </form>
-    </main>
-    <footer>
-        <p>&copy; 2024 All rights reserved.</p>
-      </footer>
-      <script src="/static/scripts.js"></script>
-      <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const placeId = getPlaceIdFromURL();
-            const placeInput = document.getElementById('place');
+        <a href="/login.html" class="login-button" id="login-link">Login</a>
+        <a href="#" class="logout-button" id="logout-link" style="display: none;">Logout</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <form id="review-form" class="review-form">
+      <h2>Add a Review</h2>
+      <label for="place">Place:</label>
+      <input type="text" id="place" name="place" readonly>
 
-            // Fetch the place details to fill the place input
-            async function fetchPlaceDetailsForForm() {
-                const token = getCookie('token');
-                const headers = token ? { 'Authorization': `Bearer ${token}` } : {};
-                const response = await fetch(`http://127.0.0.1:5000/places/${placeId}`, { headers });
+      <label for="review">Review:</label>
+      <textarea id="review" name="review" required></textarea>
 
-                if (response.ok) {
-                    const place = await response.json();
-                    placeInput.value = `${place.name} (${place.city_name}, ${place.country_name})`;
-                } else {
-                    console.error('Failed to fetch place details:', response.statusText);
-                }
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+  <footer>
+    <p>&copy; 2024 All rights reserved.</p>
+  </footer>
+  <script src="/static/scripts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const placeId = getPlaceIdFromURL();
+        const placeInput = document.getElementById('place');
+
+        // Fetch the place details to fill the place input
+        async function fetchPlaceDetailsForForm() {
+            const token = getCookie('token');
+            const headers = token ? { 'Authorization': `Bearer ${token}` } : {};
+            const response = await fetch(`http://127.0.0.1:5000/places/${placeId}`, { headers });
+
+            if (response.ok) {
+                const place = await response.json();
+                placeInput.value = `${place.name} (${place.city_name}, ${place.country_name})`;
+            } else {
+                console.error('Failed to fetch place details:', response.statusText);
             }
+        }
 
-            fetchPlaceDetailsForForm();
+        fetchPlaceDetailsForForm();
+
+        const reviewForm = document.getElementById('review-form');
+        reviewForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const reviewText = document.getElementById('review').value;
+
+            try {
+                await submitReview(getCookie('token'), placeId, reviewText);
+                alert('Review submitted successfully!');
+                reviewForm.reset();
+            } catch (error) {
+                console.error('Error during review submission:', error);
+                alert('Failed to submit review');
+            }
         });
-    </script>
-    </body>
+    });
+  </script>
+</body>
 </html>

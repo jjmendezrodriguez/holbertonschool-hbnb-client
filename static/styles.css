@@ -43,7 +43,7 @@ html {
   width: 150px; /* Ajusta el ancho de la imagen */
   height: auto; /* Mantiene la proporción de la imagen */
   display: block;
-  margin-right: 140px; /* Texto home, places, review */
+  margin-right: 180px; /* Texto home, places, review */
   border-radius: 8px; /* Bordes redondeados */
 }
 
@@ -258,7 +258,7 @@ html {
 
 /* Footer */
 main {
-  padding-bottom: 30px; /*para que no se trebe el fotter con el main*/
+  padding-bottom: 60px; /*para que no se trebe el fotter con el main*/
 }
 
 footer {
@@ -282,7 +282,7 @@ footer p {
 
 /* Review */
 
-.card-review {
+.card-review, .review-form {
   text-align: center;
 }
 
@@ -346,16 +346,16 @@ footer p {
 }
 
 .place-image-large {
-  width: 15%;
-  max-width: 50px; /* Limitar el ancho máximo de la imagen */
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 15px;
+  width: 5%;
+  max-width: 10px; /* Limitar el ancho máximo de la imagen */
+  height: 10px;
+  border-radius: 10px;
+  margin-bottom: 5px;
 }
 
 .place-info {
-  width: 100%;
-  max-width: 600px; /* Limitar el ancho máximo de la información del lugar */
+  width: 50%;
+  max-width: 100px; /* Limitar el ancho máximo de la información del lugar */
   text-align: center; /* Centrar el texto */
 }
 
@@ -430,5 +430,48 @@ footer p {
 }
 
 .add-review button:hover {
+  background-color: var(--color-primary);
+}
+
+/* Review from */
+
+.review-form, .review-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px 0;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left; /* Alinear el texto a la izquierda */
+}
+
+.review-form label, .review-card p {
+  margin: 10px 0 5px;
+  width: 100%;
+}
+
+.review-form textarea, .review-form select, .review-form input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.review-form button {
+  padding: 10px 20px;
+  background-color: var(--background-color);
+  color: var(--color-white);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.review-form button:hover {
   background-color: var(--color-primary);
 }
