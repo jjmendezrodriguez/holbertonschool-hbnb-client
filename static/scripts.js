@@ -262,6 +262,14 @@ async function fetchPlaceDetails(token, placeId) {
 function displayPlaceDetails(place) {
     const placeDetailsSection = document.getElementById('place-details');
     placeDetailsSection.innerHTML = '';
+    
+    if (place.images && place.images.length > 0) {
+        place.images.forEach(image => {
+            const imgElement = document.createElement('img');
+            imgElement.src = image;
+            imgElement.className = 'selected-place-image';
+            placeDetailsSection.appendChild(imgElement);
+        });
 
     const nameElement = document.createElement('h2');
     nameElement.textContent = place.name;
@@ -286,14 +294,7 @@ function displayPlaceDetails(place) {
     const amenitiesElement = document.createElement('p');
     amenitiesElement.textContent = `Amenities: ${place.amenities.join(', ')}`;
     placeDetailsSection.appendChild(amenitiesElement);
-
-    if (place.images && place.images.length > 0) {
-        place.images.forEach(image => {
-            const imgElement = document.createElement('img');
-            imgElement.src = image;
-            placeDetailsSection.appendChild(imgElement);
-        });
-    }
+}
 
     const reviewsSection = document.getElementById('reviews');
     reviewsSection.innerHTML = '<h2>Reviews</h2>';

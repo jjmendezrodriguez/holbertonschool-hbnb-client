@@ -338,6 +338,20 @@ footer p {
 
 /* Places */
 
+/* Place Details - Card Style for Selected Image */
+.selected-place-image {
+  width: 90%; /* Ajusta el ancho de la imagen al contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra alrededor de la imagen */
+  margin-bottom: 25px; /* Espacio debajo de la imagen */
+}
+
+.place-details p {
+  margin: 5px 0; /* Margen vertical entre las líneas de descripción */
+  font-size: 16px; /* Tamaño de fuente para el texto de descripción */
+}
+
 .place-details {
   display: flex;
   flex-wrap: wrap; /* Para hacer que el contenido se ajuste en pantallas pequeñas */
@@ -379,7 +393,7 @@ footer p {
 
 /* Añadir un margen superior a las secciones */
 .section {
-  margin-top: 40px;
+  margin-top: 10px;
 }
 
 /* Añadir estilos a las secciones de encabezado */

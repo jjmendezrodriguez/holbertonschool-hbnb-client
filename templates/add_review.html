@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Add Review</title>
+  <title>add Review</title>
   <meta name="description" content="Hbnb is an online marketplace that connects people who want to rent">
   <link rel="icon" type="image/x-icon" href="/static/image/favicon.ico">
   <link rel="icon" type="image/png" href="/static/image/icon.png">
@@ -34,6 +34,15 @@
 
       <label for="review">Review:</label>
       <textarea id="review" name="review" required></textarea>
+      
+      <label for="rating">Rating:</label>
+      <select id="rating" name="rating" required>
+        <option value="5">5 stars</option>
+        <option value="4">4 stars</option>
+        <option value="3">3 stars</option>
+        <option value="2">2 stars</option>
+        <option value="1">1 star</option>
+      </select>
 
       <button type="submit">Submit</button>
     </form>
@@ -67,9 +76,10 @@
         reviewForm.addEventListener('submit', async (event) => {
             event.preventDefault();
             const reviewText = document.getElementById('review').value;
+            const rating = document.getElementById('rating').value;
 
             try {
-                await submitReview(getCookie('token'), placeId, reviewText);
+                await submitReview(getCookie('token'), placeId, reviewText, rating);
                 alert('Review submitted successfully!');
                 reviewForm.reset();
             } catch (error) {
