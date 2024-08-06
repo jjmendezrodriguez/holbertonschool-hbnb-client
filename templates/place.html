@@ -27,9 +27,9 @@
     </nav>
   </header>
   <main>
-    <section class="place-details" id="place-details">
+    <div class="place-details" id="place-details">
       <!-- Los detalles del lugar serán cargados aquí por JavaScript -->
-    </section>
+    </div>
     <!-- Review -->
     <section id="Review" class="section">
       <div class="container">
@@ -43,21 +43,19 @@
       </div>
     </section>
     <section id="add-review">
-      <!-- Button to navigate to add_review.html -->
-      <button onclick="location.href='add_review.html'" class="details-button">Add Review</button>
-      <!-- Optional: Form to add a new review if the user is logged in -->
-      <form action="/add_review" method="post" class="add-review" id="review-form">
+      <h2 class="review-title">Add a Review:</h2>
+      <form method="post" class="add-review" id="review-form">
         <label for="comment">Comment:</label>
-        <textarea id="comment" name="comment" required></textarea>
+        <textarea id="review-text" name="comment" required></textarea>
         <label for="rating">Rating:</label>
         <select id="rating" name="rating" required>
+          <option value="" disabled selected>Select a rating</option>
           <option value="5">5 stars</option>
           <option value="4">4 stars</option>
           <option value="3">3 stars</option>
           <option value="2">2 stars</option>
           <option value="1">1 star</option>
         </select>
-
         <button type="submit">Submit Review</button>
       </form>
     </section>
@@ -66,5 +64,22 @@
     <p>&copy; 2024 All rights reserved.</p>
   </footer>
   <script src="/static/scripts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const placeId = getPlaceIdFromURL();
+        const addReviewButton = document.getElementById('add-review-button');
+
+        if (placeId) {
+            addReviewButton.addEventListener('click', () => {
+                window.location.href = `add_review.html?place_id=${placeId}`;
+            });
+        }
+    });
+
+    function getPlaceIdFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('place_id');
+    }
+  </script>
 </body>
 </html>

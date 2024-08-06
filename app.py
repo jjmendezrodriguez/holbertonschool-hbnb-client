@@ -3,8 +3,7 @@ from flask import Flask, request, jsonify
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 from flask_cors import CORS
 import json
-from flask import Flask, render_template, url_for
-
+from flask import Flask, render_template
 
 app = Flask(__name__)
 app.config.from_object('config.Config')
